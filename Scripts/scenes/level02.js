@@ -618,6 +618,7 @@ var scenes;
                     }
                 }
                 if (eventObject.name === "Door") {
+                    createjs.Sound.stop();
                     config.Scene.gScore = this.scoreValue;
                     config.Scene.gLive = this.livesValue;
                     currentScene = config.Scene.LEVEL3;

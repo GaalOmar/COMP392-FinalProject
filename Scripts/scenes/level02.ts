@@ -793,6 +793,7 @@ module scenes {
                     }
                 }
                 if (eventObject.name === "Door") {
+                    createjs.Sound.stop();
                     config.Scene.gScore = this.scoreValue;
                     config.Scene.gLive = this.livesValue;
 

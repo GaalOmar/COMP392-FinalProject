@@ -608,6 +608,7 @@ var scenes;
                     scene.remove(eventObject);
                 }
                 if (eventObject.name === "Door") {
+                    createjs.Sound.stop();
                     config.Scene.gScore = this.scoreValue;
                     config.Scene.gLive = this.livesValue;
                     console.log("score: " + config.Scene.gScore);
