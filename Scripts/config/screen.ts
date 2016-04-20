@@ -7,6 +7,7 @@ module config {
     
     // Scene Constants
     export class Scene {
+        //Added every scene required
         public static MENU: number = 0;
         public static PLAY: number = 1;
         public static OVER: number = 2;

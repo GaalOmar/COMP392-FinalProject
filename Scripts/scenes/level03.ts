@@ -32,6 +32,7 @@ module scenes {
         private deathPlaneGeometry: CubeGeometry;
         private deathPlaneMaterial: Physijs.Material;
         private deathPlane: Physijs.Mesh;
+        private winGame: boolean = false;
 
         private velocity: Vector3;
         private prevTime: number;
@@ -179,7 +180,7 @@ module scenes {
             // Add Lives Label
             this.livesLabel = new createjs.Text(
                 "LIVES: " + this.livesValue,
-                "40px Consolas",
+                "40px Mouse Memoirs",
                 "#ffffff"
             );
             this.livesLabel.x = config.Screen.WIDTH * 0.1;
@@ -190,7 +191,7 @@ module scenes {
             // Add Score Label
             this.scoreLabel = new createjs.Text(
                 "SCORE: " + this.scoreValue,
-                "40px Consolas",
+                "40px Mouse Memoirs",
                 "#ffffff"
             );
             this.scoreLabel.x = config.Screen.WIDTH * 0.8;
@@ -411,7 +412,7 @@ module scenes {
 
             this.ghost = new Array<Physijs.ConvexMesh>(); // Instantiate a convex mesh array
 
-            var ghostLoader = new THREE.JSONLoader().load("../../Assets/imported/ghoust.json", function (geometry: THREE.Geometry, materials) {
+            var ghostLoader = new THREE.JSONLoader().load("../../Assets/imported/ghoust.json", function(geometry: THREE.Geometry, materials) {
 
 
                 var phongMaterial = new PhongMaterial({ color: 0xffffff });
@@ -458,7 +459,7 @@ module scenes {
             this.donuts = new Array<Physijs.ConvexMesh>(); // Instantiate a convex mesh array
 
 
-            var donutLoader = new THREE.JSONLoader().load("../../Assets/imported/donut.json", function (geometry: THREE.Geometry, materials) {
+            var donutLoader = new THREE.JSONLoader().load("../../Assets/imported/donut.json", function(geometry: THREE.Geometry, materials) {
                 //jem color    
                 var phongMaterial = new PhongMaterial({ color: 0xF21F88 });
                 phongMaterial.emissive = new THREE.Color(0xF21F88);
@@ -515,7 +516,7 @@ module scenes {
 
             this.uglyDonuts = new Array<Physijs.ConvexMesh>(); // Instantiate a convex mesh array
 
-            var donutLoader2 = new THREE.JSONLoader().load("../../Assets/imported/donut.json", function (geometry: THREE.Geometry, materials) {
+            var donutLoader2 = new THREE.JSONLoader().load("../../Assets/imported/donut.json", function(geometry: THREE.Geometry, materials) {
 
                 //ugly donat gem
                 var phongMaterial = new PhongMaterial({ color: 0x0add08 });
@@ -597,7 +598,7 @@ module scenes {
                 this.mouseControls.enabled = true;
                 this.blocker.style.display = 'none';
             } else {
-                if (this.livesValue <= 0) {
+                if (this.livesValue <= 0 || this.winGame) {
                     this.blocker.style.display = 'none';
                     document.removeEventListener('pointerlockchange', this.pointerLockChange.bind(this), false);
                     document.removeEventListener('mozpointerlockchange', this.pointerLockChange.bind(this), false);
@@ -639,13 +640,13 @@ module scenes {
          */
         private checkControls(): void {
             if (this.keyboardControls.enabled) {
-                
+
                 if (this.keyboardControls.cheatKey) {
                     this.remove(this.player);
                     this.player.position.set(0, 10, -173);
                     this.add(this.player);
                 }
-                
+
                 this.velocity = new Vector3();
 
                 var time: number = performance.now();
@@ -860,7 +861,7 @@ module scenes {
             this.addDeathPlane();
 
             // Collision Check
-            this.player.addEventListener('collision', function (eventObject) {
+            this.player.addEventListener('collision', function(eventObject) {
                 if (eventObject.name === "BigIsland") {
                     console.log("player hit the big island");
                     this.isGrounded = true;
@@ -913,7 +914,9 @@ module scenes {
 
                 }
                 if (eventObject.name === "Door") {
-
+                    document.exitPointerLock();
+                    this.children = []; // an attempt to clean up
+                    this.winGame = true;
                     currentScene = config.Scene.WIN;
                     changeScene();
                 }

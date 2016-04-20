@@ -48,7 +48,6 @@ var scenes;
             // setup a stage on the canvas
             this._stage = new createjs.Stage(canvas);
             this._stage.enableMouseOver(20);
-            this._stage;
         };
         /**
          * The start method is the main method for the scene class
@@ -69,6 +68,12 @@ var scenes;
             this._restartButton.x = config.Screen.WIDTH * 0.5;
             this._restartButton.y = (config.Screen.HEIGHT * 0.5) + 100;
             this._stage.addChild(this._restartButton);
+            this._menuButton = new createjs.Bitmap(assets.getResult("MenuButton"));
+            this._menuButton.regX = this._menuButton.getBounds().width * 0.5;
+            this._menuButton.regY = this._menuButton.getBounds().height * 0.5;
+            this._menuButton.x = config.Screen.WIDTH * 0.5;
+            this._menuButton.y = (config.Screen.HEIGHT * 0.5) + 170;
+            this._stage.addChild(this._menuButton);
             this._restartButton.on("mouseover", function (event) {
                 event.target.alpha = 0.7;
             });
@@ -79,12 +84,6 @@ var scenes;
                 currentScene = config.Scene.PLAY;
                 changeScene();
             });
-            this._menuButton = new createjs.Bitmap(assets.getResult("MenuButton"));
-            this._menuButton.regX = this._menuButton.getBounds().width * 0.5;
-            this._menuButton.regY = this._menuButton.getBounds().height * 0.5;
-            this._menuButton.x = config.Screen.WIDTH * 0.5;
-            this._menuButton.y = (config.Screen.HEIGHT * 0.5) + 170;
-            this._stage.addChild(this._menuButton);
             this._menuButton.on("mouseover", function (event) {
                 event.target.alpha = 0.7;
             });

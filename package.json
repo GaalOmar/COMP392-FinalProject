@@ -18,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CentennialCollege/COMP392-Lesson10.git"
+    "url": "git+https://github.com/GaalOmar/COMP392-FinalProject.git"
   },
   "author": "Tom Tsiliopoulos",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CentennialCollege/COMP392-Lesson10/issues"
+    "url": "https://github.com/GaalOmar/COMP392-FinalProject/issues"
   },
-  "homepage": "https://github.com/CentennialCollege/COMP392-Lesson10#readme"
+  "homepage": "https://github.com/GaalOmar/COMP392-FinalProject#readme"
 }

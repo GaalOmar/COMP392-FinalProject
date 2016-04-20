@@ -63,36 +63,6 @@ var scenes;
             this._thank.x = config.Screen.WIDTH * 0.5;
             this._thank.y = (config.Screen.HEIGHT * 0.5);
             this._stage.addChild(this._thank);
-            /* this._winLabel = new createjs.Text(
-                 "THANK YOU FOR PLAYING",
-                 "60px Consolas",
-              "#0000cc");   */
-            /*     this._winLabel.regX = (this._winLabel.getMeasuredWidth() * 0.5);
-                this._winLabel.regY = (this._winLabel.getMeasuredLineHeight() * 0.5);
-                this._winLabel.x = (config.Screen.WIDTH * 0.5)+ 10;
-                this._winLabel.y = (config.Screen.HEIGHT * 0.5) - 250;
-                this._stage.addChild(this._winLabel); */
-            /*   this._resetButton = new createjs.Bitmap(assets.getResult("reset"));
-               this._resetButton.regX = this._resetButton.getBounds().width * 0.5;
-               this._resetButton.regY = this._resetButton.getBounds().height * 0.5;
-               this._resetButton.x = config.Screen.WIDTH * 0.5;
-               this._resetButton.y = (config.Screen.HEIGHT * 0.5) +20 ;
-               this._stage.addChild(this._resetButton);
-               
-   
-               this._resetButton.on("mouseover", (event: createjs.MouseEvent) => {
-                   event.target.alpha = 0.7;
-               });
-   
-               this._resetButton.on("mouseout", (event: createjs.MouseEvent) => {
-                   event.target.alpha = 1.0;
-               });
-   
-               this._resetButton.on("click", (event: createjs.MouseEvent) => {
-                   currentScene = config.Scene.PLAY;
-                   changeScene();
-               });
-               */
         };
         /**
          * The update method updates the animation loop and other objects

@@ -1,5 +1,39 @@
 /// <reference path="_reference.ts"/>
 // MAIN GAME FILE
+/*
+Name: Ga-alo Omar, Eunmi Han and Nikita Chernykh
+    Source File Name: Advanced Graphics- Final Project
+    Last Modified by: Ga-alo Omar
+    Date last Modified: Apr 20, 2016
+    Program description: Creating a 3D game with 3 different levels
+    Revision History:
+    Commit 1-11: We were setting everyone up with the githun account and adding our assignment 3 as our first level
+    Commit 12-14: Minor fixes
+    Commit 15: Added Level 2
+    Commit 16: Fixed dor and lives
+    Commit 17: Added Collider on the doors
+    Commit 18: Added sound to our levels
+    Commit 19-23: Eunmi merging and updating sound
+    Commit 24: Ghost Added
+    Commit 25-29: Level 2 was completed
+    Commit 30: Level 3 was added
+    Commit 31-35: Merging levels together
+    Commit 36-37: Testing Ghost
+    Commit 38-39: Colored Ghost
+    Commit 40-44: Merging ghost with level
+    Commit 45: Soundtrack/donut fix and level 3 fix
+    Commit 46-48: Merging levels
+    Commit 49-51: Minor fixes and merges
+    Commit 52: Adding win and intstruction scenes
+    Commit 53: Designing win scene
+    Commit 54-57: Merging levels
+    Commit 58-60: Minor fixes and merges
+    Commit 61: Added cheat key
+    Commit 62-67: Merging cheat key
+    Commit 68: Completing win and thanks scene
+    Commit 69: Win/Game/Instruction Last Update
+      
+*/
 // THREEJS Aliases
 var Scene = Physijs.Scene;
 var Renderer = THREE.WebGLRenderer;
@@ -96,7 +130,7 @@ function init() {
     // setup the camera
     setupCamera();
     // set initial scene
-    currentScene = config.Scene.WIN;
+    currentScene = config.Scene.MENU;
     changeScene();
     // Add framerate stats
     addStatsObject();

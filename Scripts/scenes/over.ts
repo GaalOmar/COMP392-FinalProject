@@ -3,7 +3,7 @@
  */
 module scenes {
     /**
-     * This class instantiates the game over scene object
+     * This Over class instantiates the game over scene object
      * 
      * @class Over
      * @extends scenes.Scene
@@ -51,6 +51,7 @@ module scenes {
             // setup a stage on the canvas
             this._stage = new createjs.Stage(canvas);
             this._stage.enableMouseOver(20);
+            
         }
 
 

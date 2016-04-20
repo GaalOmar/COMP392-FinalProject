@@ -9,7 +9,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 var scenes;
 (function (scenes) {
     /**
-     * This class instantiates the game over scene object
+     * This Over class instantiates the game over scene object
      *
      * @class Over
      * @extends scenes.Scene

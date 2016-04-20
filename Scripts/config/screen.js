@@ -13,6 +13,7 @@ var config;
     var Scene = (function () {
         function Scene() {
         }
+        //Added every scene required
         Scene.MENU = 0;
         Scene.PLAY = 1;
         Scene.OVER = 2;

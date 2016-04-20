@@ -23,6 +23,7 @@ var scenes;
          */
         function Level03() {
             _super.call(this);
+            this.winGame = false;
             this.donutCount = 5;
             //light
             this.light = new THREE.DirectionalLight(0xffffff);
@@ -78,13 +79,13 @@ var scenes;
             this.scoreValue = config.Scene.gScore;
             this.livesValue = config.Scene.gLive;
             // Add Lives Label
-            this.livesLabel = new createjs.Text("LIVES: " + this.livesValue, "40px Consolas", "#ffffff");
+            this.livesLabel = new createjs.Text("LIVES: " + this.livesValue, "40px Mouse Memoirs", "#ffffff");
             this.livesLabel.x = config.Screen.WIDTH * 0.1;
             this.livesLabel.y = (config.Screen.HEIGHT * 0.15) * 0.20;
             this.stage.addChild(this.livesLabel);
             console.log("Added Lives Label to stage");
             // Add Score Label
-            this.scoreLabel = new createjs.Text("SCORE: " + this.scoreValue, "40px Consolas", "#ffffff");
+            this.scoreLabel = new createjs.Text("SCORE: " + this.scoreValue, "40px Mouse Memoirs", "#ffffff");
             this.scoreLabel.x = config.Screen.WIDTH * 0.8;
             this.scoreLabel.y = (config.Screen.HEIGHT * 0.15) * 0.20;
             this.stage.addChild(this.scoreLabel);
@@ -427,7 +428,7 @@ var scenes;
                 this.blocker.style.display = 'none';
             }
             else {
-                if (this.livesValue <= 0) {
+                if (this.livesValue <= 0 || this.winGame) {
                     this.blocker.style.display = 'none';
                     document.removeEventListener('pointerlockchange', this.pointerLockChange.bind(this), false);
                     document.removeEventListener('mozpointerlockchange', this.pointerLockChange.bind(this), false);
@@ -695,6 +696,9 @@ var scenes;
                     }
                 }
                 if (eventObject.name === "Door") {
+                    document.exitPointerLock();
+                    this.children = []; // an attempt to clean up
+                    this.winGame = true;
                     currentScene = config.Scene.WIN;
                     changeScene();
                 }

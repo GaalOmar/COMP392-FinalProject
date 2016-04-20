@@ -155,7 +155,7 @@ module scenes {
             // Add Lives Label
             this.livesLabel = new createjs.Text(
                 "LIVES: " + this.livesValue,
-                "40px Consolas",
+                "40px Mouse Memoirs",
                 "#ffffff"
             );
             this.livesLabel.x = config.Screen.WIDTH * 0.1;
@@ -166,7 +166,7 @@ module scenes {
             // Add Score Label
             this.scoreLabel = new createjs.Text(
                 "SCORE: " + this.scoreValue,
-                "40px Consolas",
+                "40px Mouse Memoirs",
                 "#ffffff"
             );
             this.scoreLabel.x = config.Screen.WIDTH * 0.8;
