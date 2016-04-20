@@ -34,6 +34,8 @@ Name: Ga-alo Omar, Eunmi Han and Nikita Chernykh
     Commit 62-67: Merging cheat key
     Commit 68: Completing win and thanks scene
     Commit 69: Win/Game/Instruction Last Update 
+    Commit 70-71: Final Commits
+    
       
 */
 

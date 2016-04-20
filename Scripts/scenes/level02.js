@@ -111,11 +111,11 @@ var scenes;
             createjs.Sound.volume = 0.1;
             // Beginning Big Island
             //Ground texture
-            this.groundTexture = new THREE.TextureLoader().load('../../Images/GravelCobble.jpg');
+            this.groundTexture = new THREE.TextureLoader().load('../../Images/GravelCobble.png');
             this.groundTexture.wrapS = THREE.RepeatWrapping;
             this.groundTexture.wrapT = THREE.RepeatWrapping;
             this.groundTexture.repeat.set(2, 2);
-            this.groundTextureNormal = new THREE.TextureLoader().load('../../Images/GravelCobble.jpg');
+            this.groundTextureNormal = new THREE.TextureLoader().load('../../Images/GravelCobble.png');
             this.groundTextureNormal.wrapS = THREE.RepeatWrapping;
             this.groundTextureNormal.wrapT = THREE.RepeatWrapping;
             this.groundTextureNormal.repeat.set(2, 2);
